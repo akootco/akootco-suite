@@ -26,16 +26,12 @@ subprojects {
     }
 
     dependencies {
-        // Paper
         compileOnly "io.papermc.paper:paper-api:${project.minecraft_version}-R0.1-SNAPSHOT"
-
-        // JUnit
         testImplementation "org.junit.jupiter:junit-jupiter-api:${project.junit_version}"
     }
 
     if(project.name != 'bluefox') {
         dependencies {
-            // Kotlin
             compileOnly "org.jetbrains.kotlin:kotlin-stdlib:${project.kotlin_version}"
         }
         shadowJar {
