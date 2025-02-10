@@ -5,6 +5,7 @@
     <mapping directory="$PROJECT_DIR$/alleycat" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/bluefox" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/choco" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/edulis" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/latte" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/plushies" vcs="Git" />
   </component>
