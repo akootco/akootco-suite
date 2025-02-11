@@ -34,13 +34,19 @@ subprojects {
     }
 
     dependencies {
+        // Paper API
         compileOnly "io.papermc.paper:paper-api:${project.minecraft_version}-R0.1-SNAPSHOT"
-        testImplementation "org.junit.jupiter:junit-jupiter-api:${project.junit_version}"
-        testImplementation "org.mockbukkit.mockbukkit:mockbukkit-${mockbukkit_version}"
-        //testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.12.0-RC1'
+
+        // Unit tests
+        testImplementation "org.junit.jupiter:junit-jupiter-api:${project.junit_api_version}"
+        testImplementation "org.junit.platform:junit-platform-launcher:${junit_platform_version}"
+
+        // Logging
         testImplementation "org.slf4j:slf4j-api:${sl4j_version}"
         testImplementation "org.slf4j:slf4j-simple:${sl4j_version}"
 
+        // Bukkit tests
+        testImplementation "org.mockbukkit.mockbukkit:mockbukkit-${mockbukkit_version}"
     }
 
     test {
