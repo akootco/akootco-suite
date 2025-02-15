@@ -1,23 +1,29 @@
 [submodule "alleycat"]
         path = alleycat
         url = https://github.com/akootco/alleycat.git
+        branch = master
 
 [submodule "bluefox"]
         path = bluefox
         url = https://github.com/akootco/bluefox.git
+        branch = master
 
 [submodule "choco"]
         path = choco
         url = https://github.com/akootco/choco.git
+        branch = master
 
 [submodule "edulis"]
         path = edulis
         url = https://github.com/akootco/edulis.git
+        branch = master
 
 [submodule "latte"]
         path = latte
         url = https://github.com/akootco/latte.git
+        branch = master
 
 [submodule "plushies"]
         path = plushies
         url = https://github.com/akootco/plushies.git
+        branch = master
