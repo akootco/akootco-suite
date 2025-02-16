@@ -45,3 +45,11 @@ bin/
 ### Custom ###
 test
 /.idea/dataSources.xml
+
+### SubModules ###
+alleycat
+bluefox
+choco
+edulis
+latte
+plushies
