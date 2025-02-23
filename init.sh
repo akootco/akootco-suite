@@ -1,5 +1,5 @@
-repos=("alleycat" "bluefox" "choco" "latte" "plushies" "edulis")
+#!/usr/bin/env bash
 
-for repo in "${repos[@]}"; do
+while read -r repo; do
     git clone "https://github.com/akootco/$repo"
-done
+done < repos.txt
