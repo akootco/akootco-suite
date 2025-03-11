@@ -3,5 +3,6 @@ bluefox
 choco
 latte
 plushies
+plushies-geyser
 edulis
 web
