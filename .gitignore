@@ -44,7 +44,10 @@ bin/
 
 ### Custom ###
 test
-/.idea/dataSources.xml
+.idea/dataSources.xml
+.idea/webServers.xml
+.idea/sshConfigs.xml
+.idea/deployment.xml
 
 ### SubModules ###
 alleycat
@@ -55,3 +58,4 @@ latte
 plushies
 plushies-geyser
 web
+

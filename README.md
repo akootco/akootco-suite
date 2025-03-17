@@ -5,7 +5,7 @@
 - Set the project SDK to **jbr** (IntelliJ should auto detect if installed in `~/.jdks`)
 - [Sync All Gradle Projects](https://www.jetbrains.com/guide/java/tutorials/working-with-gradle/syncing-and-reloading/)
 - Test by running `akootco-suite [build]`
-- Add a [Path Variable](https://www.jetbrains.com/help/idea/absolute-path-variables.html) named `PAPER`, point it to a folder that will have sub-folders with mc versions `/path/to/paper/<version>/paper.jar`
+- Add a [Path Variable](https://www.jetbrains.com/help/idea/absolute-path-variables.html) named `PAPER`, point it to a folder that will have sub-folders with mc versions
   - Example: `PATH` = `F:\Repo\Paper`
     - Contains `F:\Repo\Paper\1.21.4\paper.jar`
     - Might contain `F:\Repo\Paper\1.21.1\paper.jar` etc
