@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
-while read -r repo; do
-    git clone "https://github.com/akootco/$repo"
-done < repos.txt
+GRADLE_FILE="settings.gradle"
+INCLUDE_LINE=$(grep "^include " "$GRADLE_FILE" | tail -n 1)
+INCLUDE_LINE=${INCLUDE_LINE#include }
+INCLUDE_LINE=${INCLUDE_LINE//', '/ }
+
+for repo in $INCLUDE_LINE; do
+    repo=${repo//\'/}
+    ./clone.sh "$repo"
+done
+
+echo "Done cloning repositories."
