@@ -64,21 +64,4 @@ subprojects {
             exclude 'org/intellij/**'
         }
     }
-
-    if (project.name != 'plushies-geyser') {
-        processResources {
-            def props = [group: project.property('group'), name: project.property('plugin_name'), version: project.property('version')]
-            inputs.properties props
-            filteringCharset 'UTF-8'
-            filesMatching('plugin.yml') {
-                expand props
-            }
-        }
-
-        shadowJar {
-            destinationDirectory = file('../test/server/plugins')
-            archiveBaseName.set(project.property('plugin_name') as String)
-            archiveClassifier.set('')
-        }
-    }
 }
