@@ -53,7 +53,7 @@ subprojects {
         useJUnitPlatform()
     }
 
-    if(project.name != 'bluefox') {
+    if (project.name != 'bluefox') {
         dependencies {
             compileOnly "org.jetbrains.kotlin:kotlin-stdlib:${project.kotlin_version}"
         }
@@ -63,5 +63,20 @@ subprojects {
             exclude 'org/jetbrains/**'
             exclude 'org/intellij/**'
         }
+    }
+
+    processResources {
+        def props = [group: project.property('group'), name: project.property('plugin_name'), version: project.property('version')]
+        inputs.properties props
+        filteringCharset 'UTF-8'
+        filesMatching('plugin.yml') {
+            expand props
+        }
+    }
+
+    shadowJar {
+        destinationDirectory = file('../test/server/plugins')
+        archiveBaseName.set(project.property('plugin_name') as String)
+        archiveClassifier.set('')
     }
 }
