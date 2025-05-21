@@ -78,5 +78,6 @@ subprojects {
         destinationDirectory = file('../test/server/plugins')
         archiveBaseName.set(project.property('plugin_name') as String)
         archiveClassifier.set('')
+        archiveVersion.set('')
     }
 }
