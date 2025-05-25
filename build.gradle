@@ -29,6 +29,13 @@ subprojects {
             name = 'jitpack'
             url = 'https://jitpack.io/'
         }
+        maven {
+            name = 'playpro-repo'
+            url = 'https://maven.playpro.com'
+        }
+        maven {
+            url = uri("https://repo.opencollab.dev/main/")
+        }
         mavenCentral()
         gradlePluginPortal()
     }
@@ -36,6 +43,10 @@ subprojects {
     dependencies {
         // Paper API
         compileOnly "io.papermc.paper:paper-api:${project.minecraft_version}-R0.1-SNAPSHOT"
+
+        // Plugins
+        compileOnly "org.geysermc.geyser:api:${project.geyser_api_version}"
+        compileOnly "net.coreprotect:coreprotect:${project.coreprotect_api_version}"
 
         // Unit tests
         testImplementation "org.junit.jupiter:junit-jupiter-api:${project.junit_api_version}"
