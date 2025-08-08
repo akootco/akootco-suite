@@ -50,14 +50,14 @@ subprojects {
 
         // Unit tests
         testImplementation "org.junit.jupiter:junit-jupiter-api:${project.junit_api_version}"
-        testImplementation "org.junit.platform:junit-platform-launcher:${junit_platform_version}"
+        testImplementation "org.junit.platform:junit-platform-launcher:${project.junit_platform_version}"
 
         // Logging
-        testImplementation "org.slf4j:slf4j-api:${sl4j_version}"
-        testImplementation "org.slf4j:slf4j-simple:${sl4j_version}"
+        testImplementation "org.slf4j:slf4j-api:${project.sl4j_version}"
+        testImplementation "org.slf4j:slf4j-simple:${project.sl4j_version}"
 
         // Bukkit tests
-        testImplementation "org.mockbukkit.mockbukkit:mockbukkit-${mockbukkit_version}"
+        testImplementation "org.mockbukkit.mockbukkit:mockbukkit-${project.mockbukkit_version}"
     }
 
     test {
