@@ -43,6 +43,7 @@ subprojects {
     dependencies {
         // Paper API
         compileOnly "io.papermc.paper:paper-api:${project.minecraft_version}-R0.1-SNAPSHOT"
+        compileOnly "net.kyori:adventure-api:${adventure_version}"
 
         // Plugins
         compileOnly "org.geysermc.geyser:api:${project.geyser_api_version}"
