@@ -63,3 +63,13 @@ web
 /.idea/cat-activity.xml
 /.idea/misc.xml
 /.idea/vcs.xml
+
+# Android Studio junk
+/.idea/caches/**
+/.idea/gradle.xml
+/.idea/migrations.xml
+/.idea/codeStyles
+/.idea/dictionaries/**
+/.idea/runConfigurations.xml
+/.idea/studiobot.xml
+local.properties
