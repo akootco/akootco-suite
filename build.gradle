@@ -42,7 +42,7 @@ subprojects {
 
     dependencies {
         // Paper API
-        compileOnly "io.papermc.paper:paper-api:${project.minecraft_version}.build.+"
+        compileOnly "io.papermc.paper:paper-api:${project.minecraft_version}.build.${project.paper_build}"
         compileOnly "net.kyori:adventure-api:${adventure_version}"
 
         // Plugins
