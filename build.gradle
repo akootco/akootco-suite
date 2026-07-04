@@ -78,7 +78,7 @@ subprojects {
     }
 
     processResources {
-        def props = [group: project.property('group'), name: project.property('plugin_name'), version: project.property('version')]
+        def props = [group: project.property('group'), name: project.property('plugin_name'), version: project.property('version'), mcversion: project.property('minecraft_version')]
         inputs.properties props
         filteringCharset 'UTF-8'
         filesMatching('plugin.yml') {
