@@ -1,3 +1,5 @@
+import groovy.json.JsonSlurper
+
 plugins {
     id 'com.gradleup.shadow' version '9.2.2' apply false
     id "org.jetbrains.kotlin.jvm" version '2.3.0' apply false
@@ -91,5 +93,56 @@ subprojects {
         archiveBaseName.set(project.property('plugin_name') as String)
         archiveClassifier.set('')
         archiveVersion.set('')
+    }
+}
+
+tasks.register('downloadPaper') {
+    group = 'server'
+    description = 'Downloads the latest Paper build to test/server/paper.jar'
+
+    doLast {
+        def project = 'paper'
+
+        // Get the latest Minecraft version
+        def projectUrl = new URL(
+                "https://fill.papermc.io/v3/projects/${project}"
+        )
+
+        def connection = projectUrl.openConnection()
+        connection.setRequestProperty(
+                'User-Agent',
+                'akootco-suite/1.0 (https://github.com/akootco)'
+        )
+
+        def projectJson = new JsonSlurper().parse(connection.inputStream)
+        def version = projectJson.versions.values().flatten().first()
+
+        // Get the latest build for that version
+        def buildUrl = new URL(
+                "https://fill.papermc.io/v3/projects/${project}/versions/${version}/builds/latest"
+        )
+
+        connection = buildUrl.openConnection()
+        connection.setRequestProperty(
+                'User-Agent',
+                'akootco-suite/1.0 (https://github.com/akootco)'
+        )
+
+        def buildJson = new JsonSlurper().parse(connection.inputStream)
+        def downloadUrl = buildJson.downloads.'server:default'.url
+
+        def output = file("${projectDir}/test/server/paper.jar")
+        output.parentFile.mkdirs()
+
+        println "Downloading Paper ${version} build ${buildJson.id}..."
+        println "URL: ${downloadUrl}"
+
+        new URL(downloadUrl).withInputStream { input ->
+            output.withOutputStream { outputStream ->
+                outputStream << input
+            }
+        }
+
+        println "Paper downloaded to ${output}"
     }
 }
