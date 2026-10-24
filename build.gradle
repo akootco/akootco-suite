@@ -47,9 +47,16 @@ subprojects {
         compileOnly "io.papermc.paper:paper-api:${project.minecraft_version}.build.${project.paper_build}"
         compileOnly "net.kyori:adventure-api:${adventure_version}"
 
+        // API
+        // Discord4J but without opus-java and also use the latest version of okhttp3 pls ty
+        compileOnly("net.dv8tion:JDA:${project.jda_version}") {
+            exclude module: 'opus-java'
+        }
+
         // Plugins
         compileOnly "org.geysermc.geyser:api:${project.geyser_api_version}"
         compileOnly "net.coreprotect:coreprotect:${project.coreprotect_api_version}"
+        compileOnly "net.luckperms:api:${project.luckperms_version}"
 
         // Unit tests
         testImplementation "org.junit.jupiter:junit-jupiter-api:${project.junit_api_version}"
