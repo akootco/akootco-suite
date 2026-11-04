@@ -108,6 +108,7 @@ tasks.register('downloadPaper') {
     description = 'Downloads the latest Paper build to test/server/paper.jar'
 
     doLast {
+        def version = "${project.minecraft_version}"
         def project = 'paper'
 
         // Get the latest Minecraft version
@@ -122,7 +123,6 @@ tasks.register('downloadPaper') {
         )
 
         def projectJson = new JsonSlurper().parse(connection.inputStream)
-        def version = projectJson.versions.values().flatten().first()
 
         // Get the latest build for that version
         def buildUrl = new URL(
